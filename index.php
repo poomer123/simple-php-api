@@ -7,17 +7,17 @@
 	$password = "";
 	$db = "DB-testing";
 
-	$connect = mysqli_connect($servername, $username, $password, $db);
+	$connect = mysqli_connect($servername, $username, $password, $db) or die("Error " . mysqli_error($connect));
 
 	if ($connect):
 		// echo 'connected ';
 	endif;
 
 	$query = "
-		SELECT * FROM usermeta
+		SELECT * FROM DB_usermeta
 	";
 
-	$rs_query = mysqli_query($connect, $query);
+	$rs_query = mysqli_query($connect, $query) or die("Error in Selecting " . mysqli_error($connect));
 
 
 
